@@ -1,0 +1,40 @@
+{
+  "importance_boosts": [
+    { "keyword": "shooting", "score": 10 },
+    { "keyword": "crash", "score": 8 },
+    { "keyword": "closure", "score": 8 },
+    { "keyword": "closed", "score": 8 },
+    { "keyword": "flood", "score": 9 },
+    { "keyword": "warning", "score": 7 },
+    { "keyword": "emergency", "score": 10 },
+    { "keyword": "evacuation", "score": 10 },
+    { "keyword": "fire", "score": 7 },
+    { "keyword": "outage", "score": 6 },
+    { "keyword": "bridge", "score": 5 },
+    { "keyword": "judge", "score": 3 },
+    { "keyword": "criminal", "score": 6 },
+    { "keyword": "crime", "score": 5 },
+    { "keyword": "drugs", "score": 5 },
+    { "keyword": "firearms", "score": 5 },
+    { "keyword": "arrested", "score": 5 },
+    { "keyword": "investigation", "score": 3 },
+    { "keyword": "death", "score": 3 },
+    { "keyword": "killed", "score": 3 },
+    { "keyword": "cancer", "score": 3 },
+    { "keyword": "police", "score": 3 },
+    { "keyword": "penguins", "score": 3 },
+    { "keyword": "steeler", "score": 3 },
+    { "keyword": "pirate", "score": 3 },
+    { "keyword": "hospital", "score": 3 },
+    { "keyword": "city council", "score": 3 },
+    { "keyword": "breaking", "score": 3 },
+    { "keyword": "senator", "score": 3}
+  ],
+  "importance_penalties": [
+    { "keyword": "viral", "score": -4 },
+    { "keyword": "opinion", "score": -6 },
+    { "keyword": "editorial", "score": -6 },
+    { "keyword": "nightly", "score": -6 },
+    { "keyword": "preview", "score": -3 }
+  ]
+}

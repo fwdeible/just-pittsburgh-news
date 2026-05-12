@@ -1,0 +1,58 @@
+{
+  "sources": [
+    {
+      "name": "WTAE",
+      "url":   "https://www.wtae.com/topstories-rss",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "Pittsburgh TribLive",
+      "url": "https://triblive.com/feed/",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "Reuters",
+      "url": "https://feeds.feedburner.com/reuters/topNews",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "Pittsburgh Magazine",
+      "url": "https://pittsburghmagazine.com/feed",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "Next Pittsburgh",
+      "url": "https://nextpittsburgh.com/feed/",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "NBC",
+      "url": "https://feeds.nbcnews.com/nbcnews/public/news",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "KDKA",
+      "url": "https://www.cbsnews.com/pittsburgh/latest/rss/main",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "New Pittsburgh Courier",
+      "url":  "https://newpittsburghcourier.com/feed",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    },
+    {
+      "name": "AP",
+      "url": "https://feedx.net/rss/ap.xml",
+      "relevanceScore": 0,
+      "importanceScore": 0
+    }
+  ]
+}
