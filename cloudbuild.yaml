@@ -4,7 +4,7 @@ steps:
       [
         'build',
         '-t',
-        'us-central1-docker.pkg.dev/just-pittsburgh-news/just-pittsburgh-news/just-pittsburgh-news:$COMMIT_SHA',
+        'us-central1-docker.pkg.dev/just-pittsburgh-news/my-repo/just-pittsburgh-news:$COMMIT_SHA',
         '.'
       ]
 
