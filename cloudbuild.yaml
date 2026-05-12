@@ -30,7 +30,9 @@ steps:
         'managed',
         '--allow-unauthenticated'
       ]
-options:
-  logging: CLOUD_LOGGING_ONLY
+
 images:
   - 'us-central1-docker.pkg.dev/just-pittsburgh-news/my-repo/just-pittsburgh-news:$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
