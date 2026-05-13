@@ -35,7 +35,7 @@
     { "keyword": "export", "score": 8 },
     { "keyword": "new kensington", "score": 8 },
     { "keyword": "lower burrell", "score": 8 },
-    { "keyword": "washington", "score": 1 },
+    { "keyword": "washington township", "score": 1 },
     { "keyword": "canonsburg", "score": 8 },
     { "keyword": "mcmurray", "score": 8 },
     { "keyword": "butler", "score": 8 },
@@ -66,7 +66,7 @@
     { "keyword": "freeport", "score": 8 },
     { "keyword": "kittanning", "score": 8 },
     { "keyword": "apollo", "score": 8 },
-    { "keyword": "elizabeth", "score": 8 },
+    { "keyword": "elizabeth township", "score": 8 },
     { "keyword": "charleroi", "score": 8 },
     { "keyword": "donora", "score": 8 },
     { "keyword": "carnegie", "score": 8 },
@@ -242,7 +242,9 @@
     { "keyword": "iup", "score": 8 },
     { "keyword": "duquesne university", "score": 8 },
     { "keyword": "point park university", "score": 8 },
-    { "keyword": "pitt", "score": 5 },
+    { "keyword": "pitt ", "score": 5 },
+    { "keyword": "dve", "score": 5 },
+    { "keyword": "xdx", "score": 5 },
     { "keyword": "highmark", "score": 6 },
     { "keyword": "ahn", "score": 6 },
     { "keyword": "sheetz", "score": 6 },
@@ -263,9 +265,18 @@
     { "keyword": "pitt panthers", "score": 5 }
   ],
 
+  "people": [
+    { "keyword": "evgeni malkin", "score": 5 },
+    { "keyword": "aaron rodgers", "score": 5 },
+    { "keyword": "sidney crosby", "score": 5 },
+    { "keyword": "mastriano", "score": 5 },
+    { "keyword": "pittsburgh mayor", "score": 4 }
+  ],
+
   "negative_keywords": [
     { "keyword": "nba", "score": -10 },
     { "keyword": "the preferred realty", "score": -50 },
+    { "keyword": "talk pittsburgh", "score": -50 },
     { "keyword": "hollywood", "score": -5 },
     { "keyword": "celebrity", "score": -4 },
     { "keyword": "editorial", "score": -4 },

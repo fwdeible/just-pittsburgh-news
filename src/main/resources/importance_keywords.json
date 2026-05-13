@@ -28,6 +28,8 @@
     { "keyword": "hospital", "score": 3 },
     { "keyword": "city council", "score": 3 },
     { "keyword": "breaking", "score": 3 },
+    { "keyword": "no-hitter", "score": 3 },
+    { "keyword": "city council", "score": 3 },
     { "keyword": "senator", "score": 3}
   ],
   "importance_penalties": [
