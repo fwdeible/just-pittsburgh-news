@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pittsburgh News Feed</title>
+    <title>Just Pittsburgh News</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+
+        :root {
+            --pittsburgh-gold: #ffb81c;
+            --pittsburgh-gold-dark: #d89a00;
+            --background-main: #050505;
+            --background-card: #111111;
+            --background-sidebar: #0b0b0b;
+            --border-color: #2b2b2b;
+        }
+
         body {
-            background-color: #0f172a;
+            background-color: var(--background-main);
         }
 
         .scrollbar::-webkit-scrollbar {
@@ -18,91 +28,166 @@
         }
 
         .scrollbar::-webkit-scrollbar-track {
-            background: #1e293b;
+            background: #111;
         }
 
         .scrollbar::-webkit-scrollbar-thumb {
-            background: #475569;
+            background: #444;
             border-radius: 4px;
         }
+
+        .gold-gradient {
+            background: linear-gradient(
+                    90deg,
+                    #ffb81c 0%,
+                    #ffd24d 50%,
+                    #ffb81c 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-transition {
+            transition: transform 0.25s ease;
+        }
+
+        @media (max-width: 768px) {
+
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 280px;
+                z-index: 50;
+                transform: translateX(-100%);
+                box-shadow: 0 0 25px rgba(0,0,0,0.8);
+            }
+
+            #sidebar.open {
+                transform: translateX(0);
+            }
+
+            #mobileOverlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.65);
+                z-index: 40;
+                display: none;
+            }
+
+            #mobileOverlay.visible {
+                display: block;
+            }
+        }
+
     </style>
 </head>
 
-<body class="text-slate-200 min-h-screen">
+<body class="text-zinc-100 min-h-screen">
 
 <div class="flex flex-col h-screen">
 
     <!-- HEADER -->
-    <header class="border-b border-slate-700 bg-slate-900 px-6 py-4 flex items-center justify-between">
+    <header class="border-b border-zinc-800 bg-black px-4 md:px-6 py-4 flex items-center justify-between">
 
-        <div>
-            <h1 class="text-2xl font-bold tracking-wide">
-                Pittsburgh Feed
-            </h1>
+        <div class="flex items-center gap-4">
 
-            <p class="text-sm text-slate-400">
-                Local relevance monitoring dashboard
-            </p>
+            <!-- MOBILE MENU BUTTON -->
+            <button id="menuToggleBtn"
+                    class="md:hidden bg-zinc-900 border border-zinc-700 hover:border-yellow-500 p-2 rounded-lg">
+
+                ☰
+
+            </button>
+
+            <div>
+
+                <h1 class="text-2xl font-black tracking-wide gold-gradient">
+                    Just Pittsburgh News
+                </h1>
+
+                <p class="text-sm text-zinc-500">
+                    Local relevance monitoring dashboard
+                </p>
+
+            </div>
+
         </div>
 
         <div class="flex gap-3">
 
             <button id="refreshBtn"
-                    class="bg-blue-600 hover:bg-blue-500 transition px-4 py-2 rounded-lg font-medium">
+                    class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold transition px-4 py-2 rounded-xl shadow-lg shadow-yellow-500/20">
                 Refresh
             </button>
 
         </div>
+
     </header>
 
     <!-- MAIN -->
-    <div class="flex flex-1 overflow-hidden">
+    <div class="flex flex-1 overflow-hidden relative">
+
+        <!-- MOBILE OVERLAY -->
+        <div id="mobileOverlay"></div>
 
         <!-- SIDEBAR -->
-        <aside class="w-64 border-r border-slate-700 bg-slate-900 p-4 overflow-y-auto scrollbar">
+        <aside id="sidebar"
+               class="sidebar-transition w-72 border-r border-zinc-800 bg-[#0a0a0a] p-4 overflow-y-auto scrollbar md:relative md:translate-x-0">
 
-            <h2 class="text-lg font-semibold mb-4">
-                Filters
-            </h2>
+            <div class="flex items-center justify-between mb-6">
+
+                <h2 class="text-lg font-bold text-yellow-400">
+                    Filters
+                </h2>
+
+                <button id="closeSidebarBtn"
+                        class="md:hidden text-zinc-400 hover:text-white text-xl">
+                    ×
+                </button>
+
+            </div>
 
             <div class="space-y-2">
 
-                <button class="filter-btn w-full text-left bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-lg"
+                <button class="filter-btn w-full text-left bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 hover:border-yellow-400 px-3 py-2 rounded-xl transition"
                         data-category="ALL">
                     All
                 </button>
 
-                <button class="filter-btn w-full text-left bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-lg"
+                <button class="filter-btn w-full text-left bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 hover:border-yellow-400 px-3 py-2 rounded-xl transition"
                         data-category="TRAFFIC">
                     Traffic
                 </button>
 
-                <button class="filter-btn w-full text-left bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-lg"
+                <button class="filter-btn w-full text-left bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 hover:border-yellow-400 px-3 py-2 rounded-xl transition"
                         data-category="WEATHER">
                     Weather
                 </button>
 
-                <button class="filter-btn w-full text-left bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-lg"
+                <button class="filter-btn w-full text-left bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 hover:border-yellow-400 px-3 py-2 rounded-xl transition"
                         data-category="CRIME">
                     Crime
                 </button>
 
-                <button class="filter-btn w-full text-left bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-lg"
+                <button class="filter-btn w-full text-left bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 hover:border-yellow-400 px-3 py-2 rounded-xl transition"
                         data-category="SPORTS">
                     Sports
                 </button>
 
-                <button class="filter-btn w-full text-left bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-lg"
+                <button class="filter-btn w-full text-left bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 hover:border-yellow-400 px-3 py-2 rounded-xl transition"
                         data-category="POLITICS">
                     Politics
                 </button>
 
             </div>
 
-            <hr class="my-6 border-slate-700" />
+            <hr class="my-6 border-zinc-800" />
 
-            <div>
-                <label class="block mb-2 text-sm text-slate-400">
+            <div class="mb-6">
+
+                <label class="block mb-2 text-sm text-zinc-400">
                     Minimum Relevance Score
                 </label>
 
@@ -111,16 +196,19 @@
                        min="0"
                        max="30"
                        value="0"
-                       class="w-full" />
+                       class="w-full accent-yellow-500" />
 
-                <div class="mt-2 text-sm text-slate-300">
+                <div class="mt-2 text-sm text-zinc-300">
                     Score:
-                    <span id="relevanceScoreValue">0</span>
+                    <span id="relevanceScoreValue"
+                          class="text-yellow-400 font-semibold">0</span>
                 </div>
+
             </div>
 
             <div>
-                <label class="block mb-2 text-sm text-slate-400">
+
+                <label class="block mb-2 text-sm text-zinc-400">
                     Minimum Importance Score
                 </label>
 
@@ -129,30 +217,34 @@
                        min="0"
                        max="30"
                        value="0"
-                       class="w-full" />
+                       class="w-full accent-yellow-500" />
 
-                <div class="mt-2 text-sm text-slate-300">
+                <div class="mt-2 text-sm text-zinc-300">
                     Score:
-                    <span id="importanceScoreValue">0</span>
+                    <span id="importanceScoreValue"
+                          class="text-yellow-400 font-semibold">0</span>
                 </div>
+
             </div>
 
         </aside>
 
         <!-- FEED -->
-        <main class="flex-1 overflow-y-auto scrollbar p-6">
+        <main class="flex-1 overflow-y-auto scrollbar p-4 md:p-6 bg-[#050505]">
 
             <div class="flex items-center justify-between mb-6">
 
                 <div>
-                    <h2 class="text-xl font-semibold">
+
+                    <h2 class="text-xl font-bold text-yellow-400">
                         Feed
                     </h2>
 
                     <p id="articleCount"
-                       class="text-sm text-slate-400 mt-1">
+                       class="text-sm text-zinc-500 mt-1">
                         Loading...
                     </p>
+
                 </div>
 
             </div>
@@ -188,6 +280,34 @@
     let minimumImportanceScore = 0;
 
     // =========================================
+    // MOBILE SIDEBAR
+    // =========================================
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const overlay =
+        document.getElementById("mobileOverlay");
+
+    document.getElementById("menuToggleBtn")
+        .addEventListener("click", () => {
+
+            sidebar.classList.add("open");
+            overlay.classList.add("visible");
+        });
+
+    document.getElementById("closeSidebarBtn")
+        .addEventListener("click", closeSidebar);
+
+    overlay.addEventListener("click", closeSidebar);
+
+    function closeSidebar() {
+
+        sidebar.classList.remove("open");
+        overlay.classList.remove("visible");
+    }
+
+    // =========================================
     // CATEGORY COLORS
     // =========================================
 
@@ -198,7 +318,7 @@
         SPORTS: "bg-yellow-500/20 text-yellow-300 border border-yellow-500/30",
         POLITICS: "bg-purple-500/20 text-purple-300 border border-purple-500/30",
         BUSINESS: "bg-green-500/20 text-green-300 border border-green-500/30",
-        DEFAULT: "bg-slate-700 text-slate-200 border border-slate-600"
+        DEFAULT: "bg-zinc-800 text-zinc-200 border border-zinc-700"
     };
 
     // =========================================
@@ -220,7 +340,7 @@
             console.error(error);
 
             document.getElementById("articlesContainer").innerHTML = `
-                <div class="bg-red-900/30 border border-red-700 rounded-xl p-4">
+                <div class="bg-red-900/30 border border-red-700 rounded-2xl p-4">
                     Failed to load articles from backend.
                 </div>
             `;
@@ -249,13 +369,10 @@
                 const matchesImportanceScore =
                     (article.importanceScore || 0) >= minimumImportanceScore;
 
-                return matchesCategory && matchesRelevanceScore && matchesImportanceScore;
+                return matchesCategory &&
+                    matchesRelevanceScore &&
+                    matchesImportanceScore;
             });
-
-        // filtered.sort((a, b) => {
-        //     return (b.importanceScore || 0) -
-        //         (a.importanceScore || 0);
-        // });
 
         document.getElementById("articleCount").innerText =
             `${filtered.length} articles`;
@@ -263,7 +380,7 @@
         if (filtered.length === 0) {
 
             container.innerHTML = `
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-slate-400">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-zinc-400">
                     No matching articles.
                 </div>
             `;
@@ -293,9 +410,8 @@
             parseMatchedKeywords(article.matchedKeywords);
 
         return `
-            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 hover:border-slate-500 transition">
+            <div class="bg-[#101010] border border-zinc-800 rounded-2xl p-5 hover:border-yellow-500/40 hover:shadow-lg hover:shadow-yellow-500/10 transition">
 
-                <!-- TOP -->
                 <div class="flex items-start justify-between gap-4">
 
                     <div class="flex-1">
@@ -306,11 +422,11 @@
                                 ${category}
                             </span>
 
-                            <span class="bg-slate-700 px-2 py-1 rounded-lg text-xs">
+                            <span class="bg-zinc-800 px-2 py-1 rounded-lg text-xs border border-zinc-700">
                                 Relevance: ${article.relevanceScore ?? 0}
                             </span>
 
-                            <span class="bg-slate-700 px-2 py-1 rounded-lg text-xs">
+                            <span class="bg-zinc-800 px-2 py-1 rounded-lg text-xs border border-zinc-700">
                                 Importance: ${article.importanceScore ?? 0}
                             </span>
 
@@ -318,13 +434,13 @@
 
                         <a href="${article.articleUrl}"
                            target="_blank"
-                           class="text-xl font-semibold hover:text-blue-400 transition">
+                           class="text-xl font-semibold hover:text-yellow-400 transition">
 
                             ${escapeHtml(article.title)}
 
                         </a>
 
-                        <div class="mt-2 text-sm text-slate-400">
+                        <div class="mt-2 text-sm text-zinc-500">
 
                             ${escapeHtml(article.source || "Unknown Source")}
                             •
@@ -336,24 +452,22 @@
 
                 </div>
 
-                <!-- DESCRIPTION -->
-                <div class="mt-4 text-slate-300 leading-relaxed">
+                <div class="mt-4 text-zinc-300 leading-relaxed">
 
                     ${escapeHtml(article.description || "No description available.")}
 
                 </div>
 
-                <!-- MATCHED KEYWORDS -->
                 <div class="mt-5">
 
-                    <div class="text-xs uppercase tracking-wide text-slate-500 mb-2">
+                    <div class="text-xs uppercase tracking-wide text-zinc-600 mb-2">
                         Matched Keywords
                     </div>
 
                     <div class="flex flex-wrap gap-2">
 
                         ${matchedKeywords.map(keyword => `
-                            <span class="bg-blue-900/40 border border-blue-700/40 text-blue-300 px-2 py-1 rounded-lg text-xs">
+                            <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-300 px-2 py-1 rounded-lg text-xs">
                                 ${escapeHtml(keyword)}
                             </span>
                         `).join("")}
@@ -421,11 +535,15 @@
                     button.dataset.category;
 
                 renderArticles();
+
+                if (window.innerWidth < 768) {
+                    closeSidebar();
+                }
             });
         });
 
     // =========================================
-    // SCORE SLIDER
+    // SCORE SLIDERS
     // =========================================
 
     const relevanceScoreSlider =
