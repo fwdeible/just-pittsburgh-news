@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About | Just Pittsburgh News</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        :root {
+            --pittsburgh-gold: #ffb81c;
+            --background-main: #050505;
+        }
+
+        body {
+            background-color: var(--background-main);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(
+                    90deg,
+                    #ffb81c 0%,
+                    #ffd24d 50%,
+                    #ffb81c 100%
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.92);
+            border: 1px solid rgba(255, 184, 28, 0.12);
+            backdrop-filter: blur(12px);
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-text ul {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+
+        .content-text li {
+            margin-bottom: 0.5rem;
+        }
+
+    </style>
+</head>
+
+<body class="text-zinc-100 min-h-screen">
+
+<!-- NAV -->
+<header class="border-b border-zinc-800 bg-black sticky top-0 z-50">
+
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+
+        <div>
+
+            <h1 class="text-2xl font-black tracking-wide gold-gradient">
+                Just Pittsburgh News
+            </h1>
+
+            <p class="text-sm text-zinc-500">
+                Local relevance monitoring dashboard
+            </p>
+
+        </div>
+
+        <nav class="flex items-center gap-3">
+
+            <a href="index.html"
+               class="bg-zinc-900 border border-zinc-700 hover:border-yellow-500 hover:text-yellow-400 transition px-4 py-2 rounded-xl text-sm font-medium">
+                Feed
+            </a>
+
+
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+<section class="border-b border-zinc-900 bg-gradient-to-b from-[#111111] to-black">
+
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-20">
+
+        <div class="max-w-3xl">
+
+<!--            <div class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 text-yellow-300 px-4 py-2 rounded-full text-sm font-medium mb-6">-->
+<!--                Pittsburgh-focused local intelligence-->
+<!--            </div>-->
+
+            <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+
+                <span class="gold-gradient">
+                    add headline here
+                </span>
+
+            </h2>
+
+            <p class="text-lg text-zinc-400 leading-relaxed max-w-2xl">
+
+                add short intro / mission statement here
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-6xl mx-auto px-4 md:px-6 py-12">
+
+    <!-- SECTION -->
+    <section class="glass-card rounded-3xl p-8 md:p-10 mb-10">
+
+        <div class="mb-8">
+
+            <div class="text-yellow-400 uppercase tracking-[0.2em] text-xs font-bold mb-3">
+                Overview
+            </div>
+
+            <h3 class="text-3xl font-black mb-4">
+                What This Project Is
+            </h3>
+
+        </div>
+
+        <div class="content-text text-zinc-300">
+
+            <p>
+                &lt;add overview text here&gt;
+            </p>
+
+            <p>
+                &lt;add explanation of the problem this solves&gt;
+            </p>
+
+            <p>
+                &lt;add explanation of why Pittsburgh-specific filtering matters&gt;
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SECTION -->
+    <section class="glass-card rounded-3xl p-8 md:p-10 mb-10">
+
+        <div class="mb-8">
+
+            <div class="text-yellow-400 uppercase tracking-[0.2em] text-xs font-bold mb-3">
+                How It Works
+            </div>
+
+            <h3 class="text-3xl font-black mb-4">
+                Pipeline & Processing
+            </h3>
+
+        </div>
+
+        <div class="content-text text-zinc-300">
+
+            <p>
+                &lt;add explanation of ingestion pipeline&gt;
+            </p>
+
+            <p>
+                &lt;add explanation of filtering / scoring / categorization&gt;
+            </p>
+
+            <p>
+                &lt;add explanation of deduplication or ranking&gt;
+            </p>
+
+            <ul>
+                <li>&lt;data source bullet&gt;</li>
+                <li>&lt;relevance scoring bullet&gt;</li>
+                <li>&lt;importance scoring bullet&gt;</li>
+                <li>&lt;AI / NLP bullet&gt;</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- SECTION -->
+    <section class="glass-card rounded-3xl p-8 md:p-10 mb-10">
+
+        <div class="mb-8">
+
+            <div class="text-yellow-400 uppercase tracking-[0.2em] text-xs font-bold mb-3">
+                Technology
+            </div>
+
+            <h3 class="text-3xl font-black mb-4">
+                Stack & Infrastructure
+            </h3>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- CARD -->
+            <div class="bg-black/50 border border-zinc-800 rounded-2xl p-6">
+
+                <div class="text-yellow-400 font-bold text-sm uppercase tracking-wide mb-3">
+                    Frontend
+                </div>
+
+                <div class="text-zinc-300 leading-relaxed">
+                    &lt;add frontend stack details here&gt;
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-black/50 border border-zinc-800 rounded-2xl p-6">
+
+                <div class="text-yellow-400 font-bold text-sm uppercase tracking-wide mb-3">
+                    Backend
+                </div>
+
+                <div class="text-zinc-300 leading-relaxed">
+                    &lt;add backend stack details here&gt;
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-black/50 border border-zinc-800 rounded-2xl p-6">
+
+                <div class="text-yellow-400 font-bold text-sm uppercase tracking-wide mb-3">
+                    AI / Processing
+                </div>
+
+                <div class="text-zinc-300 leading-relaxed">
+                    &lt;add AI / NLP details here&gt;
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-black/50 border border-zinc-800 rounded-2xl p-6">
+
+                <div class="text-yellow-400 font-bold text-sm uppercase tracking-wide mb-3">
+                    Hosting
+                </div>
+
+                <div class="text-zinc-300 leading-relaxed">
+                    &lt;add deployment / hosting details here&gt;
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SECTION -->
+    <section class="glass-card rounded-3xl p-8 md:p-10 mb-10">
+
+        <div class="mb-8">
+
+            <div class="text-yellow-400 uppercase tracking-[0.2em] text-xs font-bold mb-3">
+                Roadmap
+            </div>
+
+            <h3 class="text-3xl font-black mb-4">
+                Future Plans
+            </h3>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                <div class="font-semibold text-yellow-400 mb-2">
+                    <feature title>
+                </div>
+
+                <div class="text-zinc-400 text-sm">
+                    <feature description>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                <div class="font-semibold text-yellow-400 mb-2">
+                    <feature title>
+                </div>
+
+                <div class="text-zinc-400 text-sm">
+                    <feature description>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                <div class="font-semibold text-yellow-400 mb-2">
+                    <feature title>
+                </div>
+
+                <div class="text-zinc-400 text-sm">
+                    <feature description>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                <div class="font-semibold text-yellow-400 mb-2">
+                    <feature title>
+                </div>
+
+                <div class="text-zinc-400 text-sm">
+                    <feature description>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section class="border border-yellow-500/20 bg-yellow-500/5 rounded-3xl p-8 text-center">
+
+        <div class="text-yellow-400 uppercase tracking-[0.2em] text-xs font-bold mb-4">
+            Final Notes
+        </div>
+
+        <h3 class="text-2xl font-black mb-4">
+            &lt;add closing statement here&gt;
+        </h3>
+
+        <p class="text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-6">
+            &lt;add final paragraph / disclaimer / contact info here&gt;
+        </p>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+
+            <a href="<github url>"
+               class="bg-black border border-zinc-700 hover:border-yellow-500 hover:text-yellow-400 transition px-5 py-3 rounded-xl font-medium">
+                GitHub
+            </a>
+
+            <a href="<twitter/x url>"
+               class="bg-yellow-500 hover:bg-yellow-400 text-black transition px-5 py-3 rounded-xl font-bold">
+                Follow Updates
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-zinc-900 mt-16">
+
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+
+        <div class="text-sm text-zinc-600">
+            © 2026 Just Pittsburgh News
+        </div>
+
+        <div class="text-sm text-zinc-600">
+            Built in Pittsburgh
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

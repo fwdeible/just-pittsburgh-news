@@ -111,12 +111,21 @@
                     Local relevance monitoring dashboard
                 </p>
 
+
             </div>
 
         </div>
 
+<!--        <div class="flex items-center gap-4">-->
+<!--            <img src="images/bot_banner.png"  width="600" alt="Bot Logo"/>-->
+<!--        </div>-->
+<!--        -->
         <div class="flex gap-3">
-
+            <a href="about.html" >
+            <button href="about.html"  id="refreshBtn"
+                    class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold transition px-4 py-2 rounded-xl shadow-lg shadow-yellow-500/20">
+                About
+            </button> </a>
             <button id="refreshBtn"
                     class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold transition px-4 py-2 rounded-xl shadow-lg shadow-yellow-500/20">
                 Refresh
@@ -585,7 +594,7 @@
     // AUTO REFRESH
     // =========================================
 
-    setInterval(loadArticles, 30000);
+    setInterval(loadArticles, 300000);
 
     // =========================================
     // INITIAL LOAD
