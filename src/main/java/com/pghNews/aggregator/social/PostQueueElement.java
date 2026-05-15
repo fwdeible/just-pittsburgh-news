@@ -9,7 +9,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
 
-@Table(name = "post_queue", schema="insurance_app")
+@Table(name = "post_queue", schema="public")
 @NoArgsConstructor
 @Data
 @Entity

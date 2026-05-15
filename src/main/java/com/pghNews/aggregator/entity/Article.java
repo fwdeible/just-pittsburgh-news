@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Optional;
 
-@Table(name = "articles", schema="insurance_app")
+@Table(name = "articles", schema="public")
 @NoArgsConstructor
 @Data
 @Entity
