@@ -29,7 +29,7 @@ public class PostQueueScheduler {
     private PostQueueRepo postQueueRepo;
 
     @Autowired
-    SocialMediaService socialMediaService;
+    private SocialMediaService socialMediaService;
 
     @Scheduled(fixedRate = 30000)
     public void addArticleToQueue() {
@@ -58,7 +58,7 @@ public class PostQueueScheduler {
         }
     }
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 10000)
     public void postToTwitter() {
         log.info("attempting posting to twitter");
 
