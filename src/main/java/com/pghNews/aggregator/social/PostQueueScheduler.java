@@ -33,6 +33,7 @@ public class PostQueueScheduler {
 
     @Scheduled(fixedRate = 30000)
     public void addArticleToQueue() {
+        log.info("running addArticleToQueue");
 
         List<Article> articles = articleRepo.findUnQueuedArticles(LOCAL_RELEVANCE_THRESHOLD, SOCIAL_MEDIA_IMPORTANCE_THRESHOLD);
 
@@ -59,6 +60,7 @@ public class PostQueueScheduler {
 
     @Scheduled(fixedRate = 30000)
     public void postToTwitter() {
+        log.info("attempting posting to twitter");
 
         PostQueueElement queue = postQueueRepo.findNextUnpostedArticle();
 
