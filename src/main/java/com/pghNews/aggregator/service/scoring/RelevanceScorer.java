@@ -38,7 +38,6 @@ public class RelevanceScorer extends AbstractScorer {
 
         super.runScoring(unprocessedArticles,  allRules);
 
-        log.info("finished local relevance scoring");
     }
 
     public void  setScore(Article article, Integer score) {

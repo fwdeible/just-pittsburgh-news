@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Optional;
 
-@Table(name = "articles", schema="public")
+@Table(name = "articles", schema="insurance_app")
 @NoArgsConstructor
 @Data
 @Entity
@@ -21,7 +21,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    Long id;
     Timestamp created_at;
     String source;
     String source_url;
@@ -42,6 +42,7 @@ public class Article {
     Integer processing_attempts;
     Timestamp last_processed_at;
     String articleHash;
+    Boolean isQueued;
 
     public static Article createArticleFromDTO(ArticleDTO dto) throws NoSuchAlgorithmException {
         Article article = new Article();
@@ -61,6 +62,7 @@ public class Article {
         article.setArticleUrl(dto.getArticleUrl());
         article.setImportanceScore(dto.getImportanceScore());
         article.setPublishedAt(dto.getPublishedAt());
+        article.setIsQueued(false);
         return article;
     }
 

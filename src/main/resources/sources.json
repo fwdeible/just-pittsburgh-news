@@ -42,12 +42,7 @@
       "relevanceScore": 0,
       "importanceScore": 0
     },
-    {
-      "name": "New Pittsburgh Courier",
-      "url":  "https://newpittsburghcourier.com/feed",
-      "relevanceScore": 0,
-      "importanceScore": 0
-    },
+
     {
       "name": "AP",
       "url": "https://feedx.net/rss/ap.xml",
