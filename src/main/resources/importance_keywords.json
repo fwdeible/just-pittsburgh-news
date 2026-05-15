@@ -36,10 +36,15 @@
     { "keyword": "jail", "score": 3 },
     { "keyword": "murder", "score": 6 },
     { "keyword": "escape", "score": 3 },
-    { "keyword": "allegheny county jail", "score": 3 },
-    { "keyword": "westmoreland county jail", "score": 3 },
+    { "keyword": "allegheny county", "score": 3 },
+    { "keyword": "westmoreland county", "score": 3 },
+    { "keyword": "public school", "score": 3 },
+    { "keyword": "convention center", "score": 3 },
+    { "keyword": "festival", "score": 1 },
     { "keyword": "pittsburgh zoo", "score": 3 },
     { "keyword": "pittsburgh va", "score": 3 },
+    { "keyword": "sex abuse", "score": 8 },
+    { "keyword": " free ", "score": 3 },
     { "keyword": "senator", "score": 3}
   ],
   "importance_penalties": [
@@ -47,6 +52,7 @@
     { "keyword": "opinion", "score": -6 },
     { "keyword": "editorial", "score": -6 },
     { "keyword": "nightly", "score": -6 },
+    { "keyword": "ptl", "score": -6 },
     { "keyword": "preview", "score": -3 }
   ]
 }

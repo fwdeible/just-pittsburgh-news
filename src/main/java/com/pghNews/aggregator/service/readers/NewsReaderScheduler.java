@@ -14,9 +14,6 @@ import java.util.List;
 public class NewsReaderScheduler {
 
     @Autowired
-    ArticleRepository articleRepository;
-
-    @Autowired
     FeedReader feedReader;
 
 

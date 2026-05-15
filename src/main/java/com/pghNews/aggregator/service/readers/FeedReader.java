@@ -43,7 +43,7 @@ public class FeedReader {
 
 
     public List<ArticleDTO> readAndStoreFeed(SourceRule source) {
-        log.info("Checking feed: " + source.getName());
+        log.info("Checking news feed: " + source.getName());
 
         List<ArticleDTO> articles = new ArrayList<>();
 
