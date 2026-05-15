@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 @Slf4j
@@ -43,10 +42,13 @@ public class SocialMediaService {
             responseMessage = "Posting to Twitter is disabled.";
         }
 
-
-
         else  {
-            System.out.println("twitter key isNull check: " + (Objects.isNull(twitterProperties.getApiKey()) || Objects.isNull(twitterProperties.getApiSecret()) || Objects.isNull(twitterProperties.getAccessToken()) || Objects.isNull(twitterProperties.getAccessSecret())));
+            System.out.println("????????????????????????????????????");
+            System.out.println(twitterProperties.getApiKey());
+            System.out.println(twitterProperties.getApiSecret());
+            System.out.println(twitterProperties.getAccessToken());
+            System.out.println(twitterProperties.getAccessSecret());
+
             OAuth10aService service =
                     new ServiceBuilder(twitterProperties.getApiKey())
                             .apiSecret(twitterProperties.getApiSecret())

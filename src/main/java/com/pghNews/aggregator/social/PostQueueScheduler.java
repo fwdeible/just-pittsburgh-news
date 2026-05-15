@@ -77,6 +77,8 @@ public class PostQueueScheduler {
             queue.setExternalId(response);
 
             postQueueRepo.save(queue);
+        } else {
+            log.info("no articles to post");
         }
 
 
