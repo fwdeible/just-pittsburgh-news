@@ -43,11 +43,6 @@ public class SocialMediaService {
         }
 
         else  {
-            System.out.println("????????????????????????????????????");
-            System.out.println(twitterProperties.getApiKey());
-            System.out.println(twitterProperties.getApiSecret());
-            System.out.println(twitterProperties.getAccessToken());
-            System.out.println(twitterProperties.getAccessSecret());
 
             OAuth10aService service =
                     new ServiceBuilder(twitterProperties.getApiKey())
