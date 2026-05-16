@@ -53,6 +53,7 @@
     { "keyword": "editorial", "score": -6 },
     { "keyword": "nightly", "score": -6 },
     { "keyword": "ptl", "score": -6 },
+    { "keyword": "inning", "score": -6 },
     { "keyword": "preview", "score": -3 }
   ]
 }

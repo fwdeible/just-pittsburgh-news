@@ -58,7 +58,7 @@ public class PostQueueScheduler {
         }
     }
 
-    @Scheduled(fixedRate = 300000)
+    @Scheduled(fixedRate = 600000)
     public void postToTwitter() {
         log.info("attempting posting to twitter");
 
